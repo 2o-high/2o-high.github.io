@@ -1,16 +1,19 @@
-let contents = JSON.parse('{"items": [["Άρθρο 1", "Lorem ipsum"], ["Άρθρο 2", "Dolor sit amet"]]}');
+let imgLink = 'https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg';
+let contents = JSON.parse(`{"items": [["Άρθρο 1", "Lorem ipsum", "1.html", "${imgLink}"], ["Άρθρο 2", "Dolor sit amet", "2.html", "${imgLink}"], ["Άρθρο 3", "Consectetur adipisicing elit", "3.html", "${imgLink}"]]}`);
 
 $(document).ready(() => {
+	let entries = contents.items;
+	
 	for (let item in contents.items) {
-		let code = `<div class="card">
+		let code = `<div class="slideanim card" onclick="window.location = '${entries[item][2]}'">
 					<div class="row">
-						<div class="col">
-							<img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"></img>
+						<div class="col-sm-6">
+							<img src="${entries[item][3]}" class="entryImg"></img>
 						</div>
-						<div class="col">
-							<h1 class="display-4">${contents.items[item][0]}</h1>
+						<div class="col-sm-6">
+							<h1 class="display-4">${entries[item][0]}</h1>
 							<hr>
-							<p>${contents.items[item][1]}</p>
+							<p>${entries[item][1]}</p>
 						</div>
 					</div>
 				</div>
@@ -18,10 +21,40 @@ $(document).ready(() => {
 
 		$(".container").append(code);
 	}
+	
+	$("footer a").on('click', function(event) {
+		if (this.hash !== "") {
+			event.preventDefault();
+			let hash = this.hash;
+			
+			$('html, body').animate({
+				scrollTop: $(hash).offset().top
+			}, 900, () => {
+				window.location.hash = hash;
+			});
+		}
+	});
+	
+	$('.card').hover(function() {
+		$(this).addClass('shadow p-4 mb-4').css('cursor', 'pointer'); 
+	}, function() {
+		$(this).removeClass('shadow p-4 mb-4'); 
+	});
+	
+	slideAnim();
 });
 
-$(".card").hover(function() {
-	$(this).addClass('shadow-lg').css('cursor', 'pointer'); 
-}, function() {
-	$(this).removeClass('shadow-lg'); 
+$(window).scroll(() => {
+	slideAnim();
 });
+
+slideAnim = () => {
+	$(".slideanim").each(function(){
+		let pos = $(this).offset().top;
+		let height = $(this).clientHeight;
+		
+		if ($(window).height() - $(window).scrollTop() >= $(this).position().top) {
+			$(this).addClass("slide");
+		}
+	});
+}
