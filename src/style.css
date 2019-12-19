@@ -1,8 +1,58 @@
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css);
+@import url(https://use.fontawesome.com/releases/v5.7.0/css/all.css);
+
+.navbar-nav > li {
+	font-size: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	-webkit-transition: color:rgba 1s linear;
+	-moz-transition: color:rgba 1s linear;
+	-o-transition: color:rgba 1s linear;
+	transition: color:rgba 1s linear;
+}
 
 .card {
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	transition: all 0.5s ease;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+.entryImg {
+	width: 100%;
+}
+
+.slideanim {
+	visibility: hidden;
+}
+
+.slide {
+	animation-name: slide;
+	-webkit-animation-name: slide;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	visibility: visible;
+}
+
+@keyframes slide {
+	0% {
+		opacity: 0;
+		transform: translateY(70%);
+	}
+	
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+@-webkit-keyframes slide {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(70%);
+	}
+	
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0%);
+	}
 }
