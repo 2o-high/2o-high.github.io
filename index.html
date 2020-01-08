@@ -18,19 +18,24 @@
 			<div class="collapse navbar-collapse" id="collapsibleNavbar">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link font-weight-light" href="#">Κεντρική</a>
+						<a class="nav-link font-weight-light" onclick="showTab('posts');">Κεντρική</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link font-weight-light" href="#">Posts</a>
+						<a class="nav-link font-weight-light" onclick="showTab('posts');">Posts</a>
 					</li>
 				    <li class="nav-item">
-						<a class="nav-link font-weight-light" href="#">Για εμάς</a>
+						<a class="nav-link font-weight-light" onclick="showTab('about');">Για εμάς</a>
 					</li>
 				</ul>
 			</div>
 		</nav>
 		<div class="container">
 			<br>
+			<div id="posts">
+			</div>
+			<div id="about" style="display: none;">
+			Διαφορα...<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			</div>
 		</div>
 		<br><br><br>
 		<footer class="container-fluid text-center">
