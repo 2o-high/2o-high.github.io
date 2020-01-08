@@ -1,5 +1,6 @@
 let imgLink = 'https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg';
 let contents = JSON.parse(`{"items": [["Άρθρο 1", "Lorem ipsum", "1.html", "${imgLink}"], ["Άρθρο 2", "Dolor sit amet", "2.html", "${imgLink}"], ["Άρθρο 3", "Consectetur adipisicing elit", "3.html", "${imgLink}"]]}`);
+let currentTab;
 
 $(document).ready(() => {
 	let entries = contents.items;
@@ -19,7 +20,7 @@ $(document).ready(() => {
 				</div>
 				<br>`;
 
-		$(".container").append(code);
+		$("#posts").append(code);
 	}
 	
 	$("footer a").on('click', function(event) {
@@ -51,10 +52,22 @@ $(window).scroll(() => {
 slideAnim = () => {
 	$(".slideanim").each(function(){
 		let pos = $(this).offset().top;
-		let height = $(this).clientHeight;
+		let winTop = $(window).scrollTop();
 		
-		if ($(window).height() - $(window).scrollTop() >= $(this).position().top) {
+		if (pos < winTop + 600) {
 			$(this).addClass("slide");
 		}
 	});
+}
+
+showTab = tab => {
+	if (currentTab == tab) return;
+	if (!currentTab) {
+		let hash = window.location.hash.substring(1);
+		currentTab = (hash) ? hash : '#posts';
+	}
+
+	$(currentTab).css('display', 'none');
+	currentTab = `#${tab}`;
+	$(currentTab).css('display', 'block');
 }
