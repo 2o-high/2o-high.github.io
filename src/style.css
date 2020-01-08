@@ -2,13 +2,16 @@
 @import url(https://use.fontawesome.com/releases/v5.7.0/css/all.css);
 
 .navbar-nav > li {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.nav-link {
 	font-size: 20px;
-	padding-left: 30px;
-	padding-right: 30px;
-	-webkit-transition: color:rgba 1s linear;
-	-moz-transition: color:rgba 1s linear;
-	-o-transition: color:rgba 1s linear;
-	transition: color:rgba 1s linear;
+	-webkit-transition: color 0.3s linear;
+	-moz-transition: color 0.3s linear;
+	-o-transition: color 0.3s linear;
+	transition: color 0.3s linear;
 }
 
 .card {
