@@ -21,6 +21,10 @@
 	transition: all 1s ease;
 }
 
+.carousel-inner img {
+    width: 100%;
+}
+
 .entryImg {
 	width: 100%;
 }
