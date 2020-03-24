@@ -1,67 +1,67 @@
 <!DOCTYPE html>
 <html lang="el">
-	<head>
-		<title>2ο Γυμνάσιο</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="./src/style.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-	</head>
-	<body id="myPage">
-		<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-			<a class="navbar-brand" style="font-weight: 500" href="#">Blog</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="collapsibleNavbar">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-						<a class="nav-link font-weight-light" onclick="showTab('main');">Κεντρική</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link font-weight-light" onclick="showTab('posts');">Posts</a>
-					</li>
-				    <li class="nav-item">
-						<a class="nav-link font-weight-light" onclick="showTab('about');">Για εμάς</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-		<div class="container">
-			<br>
-			<div id="main">
-				<div id="demo" class="carousel slide" data-ride="carousel">
-					<ul class="carousel-indicators">
-					  <li data-target="#demo" data-slide-to="0" class="active"></li>
-					  <li data-target="#demo" data-slide-to="1"></li>
-					  <li data-target="#demo" data-slide-to="2"></li>
-					</ul>
-					<div class="carousel-inner">
-					</div>
-					<a class="carousel-control-prev" href="#demo" data-slide="prev">
-						<span class="carousel-control-prev-icon"></span>
-					</a>
-					<a class="carousel-control-next" href="#demo" data-slide="next">
-						<span class="carousel-control-next-icon"></span>
-					</a>
-				</div>
-				<br><br><br>
-			</div>
-			<div id="posts" style="display: none;">
-			</div>
-			<div id="about" style="display: none;">
-			Διαφορα...<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-			</div>
-		</div>
-		<br><br><br>
-		<footer class="container-fluid text-center">
-			<a href="#myPage" title="To Top"><i class='fas fa-angle-up'></i></a>
-		</footer>
-		<br>
-		<h6 class="text-center"><small>Powered by <a href="https://bonfirescratch.github.io">-Bonfire-</a></small></h6>
-		<br>
-		<script src="./src/app.js"></script>
-	</body>
+    <head>
+        <title>2ο Γυμνάσιο</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./src/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body id="myPage">
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+            <a class="navbar-brand" style="font-weight: 500;" href="#">Blog</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-light" onclick="showTab('main');">Κεντρική</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-light" onclick="showTab('posts');">Posts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-light" onclick="showTab('about');">Για εμάς</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <br>
+            <div id="main">
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                      <li data-target="#demo" data-slide-to="0" class="active"></li>
+                      <li data-target="#demo" data-slide-to="1"></li>
+                      <li data-target="#demo" data-slide-to="2"></li>
+                    </ul>
+                    <div class="carousel-inner">
+                    </div>
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+                <br><br><br>
+            </div>
+            <div id="posts" style="display: none;">
+            </div>
+            <div id="about" style="display: none;">
+            Διαφορα...<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+        <br><br><br>
+        <footer class="container-fluid text-center">
+            <a href="#myPage" title="To Top"><i class='fas fa-angle-up'></i></a>
+        </footer>
+        <br>
+        <h6 class="text-center"><small>Powered by <a href="https://bonfirescratch.github.io">-Bonfire-</a></small></h6>
+        <br>
+        <script src="./src/app.js"></script>
+    </body>
 </html>
