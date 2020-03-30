@@ -43,20 +43,7 @@ $(document).ready(() => {
     }
     
     $('.carousel-item:first').addClass('active');
-    $('#main').append(`<br><center><button class="learn-more" onclick="showTab('posts');"><span class="circle" aria-hidden="true"><span class="icon arrow"></span></span><span class="button-text">Περισσότερα</span></button></center><br>`);
-    
-    $('footer a').on('click', function(event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            let hash = this.hash;
-            
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 900, () => {
-                window.location.hash = hash;
-            });
-        }
-    });
+    $('#main').append(`<br><center><button class="learn-more" onclick="scrollTo(0, 0); showTab('posts');"><span class="circle" aria-hidden="true"><span class="icon arrow"></span></span><span class="button-text">Περισσότερα</span></button></center><br>`);
     
     $('.card').hover(function() {
         $(this).addClass('shadow p-4 mb-4').css('cursor', 'pointer'); 
@@ -89,7 +76,5 @@ showTab = tab => {
     $(currentTab).css('display', 'none');
     currentTab = `#${tab}`;
     $(currentTab).css('display', 'block');
-    let pos = $(window).scrollTop();
     window.location.hash = currentTab;
-    $(window).scrollTop(pos);
 }
