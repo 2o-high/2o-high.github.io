@@ -43,7 +43,7 @@ $(document).ready(() => {
     }
     
     $('.carousel-item:first').addClass('active');
-    $('#main').append(`<br><center><button class="learn-more" onclick="scrollTo(0, 0); showTab('posts');"><span class="circle" aria-hidden="true"><span class="icon arrow"></span></span><span class="button-text">Περισσότερα</span></button></center><br>`);
+    $('#main').append(`<br><center><button class="learn-more slideanim"><span class="circle" aria-hidden="true"><span class="icon arrow"></span></span><span class="button-text">Περισσότερα</span></button></center><br>`);
     
     $('.card').hover(function() {
         $(this).addClass('shadow p-4 mb-4').css('cursor', 'pointer'); 
@@ -54,16 +54,26 @@ $(document).ready(() => {
     slideAnim();
 });
 
+$('body').delegate('.learn-more', 'click', () => {
+    showTab('posts');
+});
+
 $(window).scroll(() => {
     slideAnim();
 });
+
+scrollToTop = () => {
+    $('body, html').animate({
+        scrollTop: 0
+    }, 1000);
+}
 
 slideAnim = () => {
     $(".slideanim").each(function(){
         let pos = $(this).offset().top;
         let winTop = $(window).scrollTop();
         
-        if (pos < winTop + 600) {
+        if (pos < winTop + 800) {
             $(this).addClass("slide");
         }
     });
@@ -77,4 +87,5 @@ showTab = tab => {
     currentTab = `#${tab}`;
     $(currentTab).css('display', 'block');
     window.location.hash = currentTab;
+    scrollToTop();
 }
