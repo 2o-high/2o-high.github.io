@@ -5,6 +5,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: #ececec;
+}
+
 .navbar-nav > li {
     padding-left: 10px;
     padding-right: 10px;
@@ -23,6 +27,8 @@ html {
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
     transition: all 1s ease;
+    background-color: #e8e8e8;
+    border: none;
 }
 
 .carousel-inner img {
